@@ -1,0 +1,1 @@
+python3 run_scripts.py --problem_name "holonomic_rescue" --planner_name "refpol" --env_name "corsica" --planning_time 0 --runs 100 --primitive_steps 500 --visualize_world False --max_macro_action_length 15

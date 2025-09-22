@@ -1,0 +1,634 @@
+<?xml version="1.0" ?>
+<robot name="gridmap_obstacles">
+  <link name="north_wall">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.5 -30.5 0"/>
+      <geometry>
+        <box size="2 64 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.5 -30.5 0"/>
+      <geometry>
+         <box size="2 64 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="west_wall">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.57075" xyz="-30.5 0.5 0"/>
+      <geometry>
+        <box size="2 64 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 1.57075" xyz="-30.5 0.5 0"/>
+      <geometry>
+         <box size="2 64 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="north_west" type="fixed">
+      <parent link="north_wall"/>
+      <child link="west_wall"/>
+      <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="south_wall">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-30.5 0.5 0"/>
+      <geometry>
+        <box size="2 64 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-30.5 0.5 0"/>
+      <geometry>
+         <box size="2 64 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="west_south" type="fixed">
+      <parent link="west_wall"/>
+      <child link="south_wall"/>
+      <origin xyz="-31 -31 0"/>
+  </joint>
+
+  <link name="east_wall">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.57075" xyz="0 0.5 0"/>
+      <geometry>
+        <box size="2 64 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 1.57075" xyz="0 0.5 0"/>
+      <geometry>
+         <box size="2 64 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="west_east" type="fixed">
+      <parent link="west_wall"/>
+      <child link="east_wall"/>
+      <origin xyz="-30.5 -62 0"/>
+  </joint>
+
+  <link name="obs1">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="11 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="11 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs1" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs1"/>
+      <origin xyz="-6 -7 0"/>
+  </joint>
+
+  <link name="obs2">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="21 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="21 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs2" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs2"/>
+      <origin xyz="-28 -7 0"/>
+  </joint>
+
+  <link name="obs3">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="12 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="12 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs3" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs3"/>
+      <origin xyz="-50.5 -7 0"/>
+  </joint>
+
+  <link name="obs4">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="- 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs4" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs4"/>
+      <origin xyz="-10 -10 0"/>
+  </joint>
+
+  <link name="obs5">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 18 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 18 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs5" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs5"/>
+      <origin xyz="-10 -23.5 0"/>
+  </joint>
+
+  <link name="obs6">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="8 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 1 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="8 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs6" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs6"/>
+      <origin xyz="-4.5 -25 0"/>
+  </joint>
+
+  <link name="obs7">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="21 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="21 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs7" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs7"/>
+      <origin xyz="-28 -31 0"/>
+  </joint>
+
+  <link name="obs8">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 21 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 21 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs8" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs8"/>
+      <origin xyz="-37 -19 0"/>
+  </joint>
+
+  <link name="obs9">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs9" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs9"/>
+      <origin xyz="-55 -10 0"/>
+  </joint>
+
+  <link name="obs10">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 18 1"/>
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 18 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs10" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs10"/>
+      <origin xyz="-55 -23.5 0"/>
+  </joint>
+
+  <link name="obs11">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="6 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="6 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs11" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs11"/>
+      <origin xyz="-50.5 -31 0"/>
+  </joint>
+
+  <link name="obs12">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 24 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 24 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs12" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs12"/>
+      <origin xyz="-46 -20.5 0"/>
+  </joint>
+
+  <link name="obs13">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 6 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 6 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs13" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs13"/>
+      <origin xyz="-10 -38.5 0"/>
+  </joint>
+
+  <link name="obs14">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="20 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="20 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs14" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs14"/>
+      <origin xyz="-10.5 -43 0"/>
+  </joint>
+
+  <link name="obs15">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 19 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 19 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs15" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs15"/>
+      <origin xyz="-25 -51 0"/>
+  </joint>
+
+  <link name="obs16">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="28 3 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="28 3 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs16" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs16"/>
+      <origin xyz="-46.5 -43 0"/>
+  </joint>
+
+  <link name="obs17">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 6 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 6 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs17" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs17"/>
+      <origin xyz="-34 -47.5 0"/>
+  </joint>
+
+  <link name="obs18">
+          <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="3 4 1" />
+      </geometry>
+       <material name="grey">
+        <color rgba="0 0 0 .5"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="3 4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="obs18" type="fixed">
+      <parent link="west_wall"/>
+      <child link="obs18"/>
+      <origin xyz="-34 -58.5 0"/>
+  </joint>
+</robot>

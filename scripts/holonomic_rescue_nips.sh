@@ -1,0 +1,4 @@
+python3 run_scripts.py --problem_name "holonomic_rescue" --planner_name "refsolver-nips" --env_name "corsica" --planning_time 10 --runs 50 --primitive_steps 500 --visualize_world False --max_macro_action_length 15
+python3 run_scripts.py --problem_name "holonomic_rescue" --planner_name "refsolver-nips" --env_name "corsica" --planning_time 2 --runs 50 --primitive_steps 500 --visualize_world False --max_macro_action_length 15
+python3 run_scripts.py --problem_name "holonomic_rescue" --planner_name "refsolver-nips" --env_name "corsica" --planning_time 3 --runs 50 --primitive_steps 500 --visualize_world False --max_macro_action_length 15
+python3 run_scripts.py --problem_name "holonomic_rescue" --planner_name "refsolver-nips" --env_name "corsica" --planning_time 5 --runs 50 --primitive_steps 500 --visualize_world False --max_macro_action_length 15

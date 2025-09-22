@@ -1,0 +1,2 @@
+python3 run_scripts.py --problem_name "nav_3d_continuous" --planner_name "refpol" --env_name "maze_3d" --planning_time 0 --runs 50 --primitive_steps 500 --visualize_world False --max_macro_action_length 10 --start 0
+python3 run_scripts.py --problem_name "nav_3d_continuous" --planner_name "refpol" --env_name "maze_3d" --planning_time 0 --runs 50 --primitive_steps 500 --visualize_world False --max_macro_action_length 10 --start 1
