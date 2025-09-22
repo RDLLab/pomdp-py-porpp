@@ -7,7 +7,7 @@
 *.blg
 *.log
 *.out
-*.pdf
+# *.pdf
 *.mtc*
 *.mtc0
 *.mtc1
